@@ -2,9 +2,10 @@
 
 ## Excluded folders
 
---exclude       \
-    go,         \
-    Pods,       \
+--exclude           \
+    build.noindex,  \
+    go,             \
+    Pods,           \
     vendor
 
 ## Enabled rules
@@ -274,7 +275,8 @@
 
 ### Property @attributes: "preserve", "prev-line", or "same-line"
 
---varattributes same-line
+--storedvarattrs same-line
+--computedvarattrs same-line
 
 ### How Void types are represented: "void" (default) or "tuple"
 

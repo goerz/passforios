@@ -8,6 +8,7 @@
 
 import passKit
 import SVProgressHUD
+import UniformTypeIdentifiers
 
 class SSHKeyFileImportTableViewController: AutoCellHeightUITableViewController {
     @IBOutlet var sshPrivateKeyFile: UITableViewCell!
@@ -21,7 +22,7 @@ class SSHKeyFileImportTableViewController: AutoCellHeightUITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        let picker = UIDocumentPickerViewController(documentTypes: ["public.data"], in: .open)
+        let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.data])
         cell?.isSelected = false
         guard cell == sshPrivateKeyFile else {
             return

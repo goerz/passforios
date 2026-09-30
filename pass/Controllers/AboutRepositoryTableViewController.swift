@@ -51,12 +51,9 @@ class AboutRepositoryTableViewController: BasicStaticTableViewController {
             let lastSynced = self.lastSyncedTimeString()
             let commits = self.numberOfCommitsString()
 
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else {
-                    return
-                }
+            DispatchQueue.main.async {
                 let type = UITableViewCell.AccessoryType.none
-                strongSelf.tableData = [
+                self.tableData = [
                     // section 0
                     [
                         [.style: CellDataStyle.value1, .accessoryType: type, .title: "Passwords".localize(), .detailText: passwords],
@@ -67,8 +64,8 @@ class AboutRepositoryTableViewController: BasicStaticTableViewController {
                         [.title: "CommitLogs".localize(), .action: "segue", .link: "showCommitLogsSegue"],
                     ],
                 ]
-                strongSelf.indicator.stopAnimating()
-                strongSelf.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.tableView.reloadData()
             }
         }
     }

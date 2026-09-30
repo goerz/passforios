@@ -67,3 +67,24 @@ fastlane/test_output
 #
 # The Continuous Integration environment will create this file. It avoids specific "Run Script" phases while building.
 .ci-env
+
+# Local development (Makefile)
+build.noindex/
+local.mk
+Config/Local.xcconfig
+# Apple's Xcode agent skills, exported by `make skills`
+.claude/skills/
+.claude/settings.local.json
+# Machine-specific instructions for Claude Code
+CLAUDE.local.md
+# Personal strings that .githooks/check-private refuses in commits
+.private-strings
+# Keys, certificates, and provisioning profiles (.githooks/check-private refuses them too)
+*.p12
+*.p8
+*.pem
+*.cer
+*.mobileprovision
+*.provisionprofile
+.env
+.env.*

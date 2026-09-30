@@ -10,18 +10,27 @@ import Foundation
 import UIKit
 
 public final class Globals {
-    public static let bundleIdentifier: String = {
-        #if BETA
-            return "me.mssun.passforiosbeta"
-        #else
-            return "me.mssun.passforios"
-        #endif
-    }()
+    // The app and each extension carry the app's bundle identifier and App Group in their
+    // Info.plist (from PASS_APP_ID and PASS_APP_GROUP in Config/Project.xcconfig), so all of
+    // them use the same keychain service, defaults, and container.
+    public static let bundleIdentifier = infoString("PassAppIdentifier") ?? Bundle.main.bundleIdentifier ?? "me.mssun.passforios"
 
-    public static let groupIdentifier = "group." + bundleIdentifier
+    // The App Group shared with the extensions, or nil in a build without a paid developer
+    // account (PAID_ACCOUNT in local.mk), which keeps its data in the app's own container.
+    public static let groupIdentifier = infoString("PassAppGroup")
     public static let passKitBundleIdentifier = bundleIdentifier + ".passKit"
 
-    public static let sharedContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)!
+    public static let sharedContainerURL: URL = {
+        if let groupIdentifier {
+            return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)!
+        }
+        let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("SharedContainer")
+        for directory in ["Documents", "Library"] {
+            try? FileManager.default.createDirectory(at: url.appendingPathComponent(directory), withIntermediateDirectories: true)
+        }
+        return url
+    }()
+
     public static let documentPath = sharedContainerURL.appendingPathComponent("Documents").path
     public static let libraryPath = sharedContainerURL.appendingPathComponent("Library").path
     public static let pgpPublicKeyPath = documentPath + "/gpg_key.pub"
@@ -57,6 +66,13 @@ public final class Globals {
     public static let passwordGeneratorLeftLayoutMargin = CGFloat(32)
 
     private init() {}
+
+    private static func infoString(_ key: String) -> String? {
+        guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String, !value.isEmpty else {
+            return nil
+        }
+        return value
+    }
 }
 
 public extension Bundle {

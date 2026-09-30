@@ -12,7 +12,7 @@ class SettingsSplitViewController: UISplitViewController, UISplitViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        preferredDisplayMode = .allVisible
+        preferredDisplayMode = .oneBesideSecondary
     }
 
     func splitViewController(

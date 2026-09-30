@@ -3,6 +3,7 @@
 ## Folders to exclude from linting
 
 excluded:
+  - build.noindex
   - go
   - Pods
   - vendor

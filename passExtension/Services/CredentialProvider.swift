@@ -6,9 +6,9 @@
 //  Copyright © 2021 Bob Sun. All rights reserved.
 //
 
-import MobileCoreServices
 import passKit
 import UIKit
+import UniformTypeIdentifiers
 
 class CredentialProvider {
     private let viewController: UIViewController
@@ -31,7 +31,7 @@ class CredentialProvider {
             if let totpPassword = password.currentOtp {
                 returnDictionary[PassExtensionKey.totpKey] = totpPassword
             }
-            extensionItem.attachments = [NSItemProvider(item: returnDictionary as NSSecureCoding, typeIdentifier: String(kUTTypePropertyList))]
+            extensionItem.attachments = [NSItemProvider(item: returnDictionary as NSSecureCoding, typeIdentifier: UTType.propertyList.identifier)]
             self.extensionContext.completeRequest(returningItems: [extensionItem])
             self.afterDecryption(password)
         }
@@ -48,7 +48,7 @@ class CredentialProvider {
                     PassExtensionKey.passwordKey: password.password,
                 ],
             ]
-            extensionItem.attachments = [NSItemProvider(item: returnDictionary as NSSecureCoding, typeIdentifier: String(kUTTypePropertyList))]
+            extensionItem.attachments = [NSItemProvider(item: returnDictionary as NSSecureCoding, typeIdentifier: UTType.propertyList.identifier)]
             self.extensionContext.completeRequest(returningItems: [extensionItem])
             self.afterDecryption(password)
         }

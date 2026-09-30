@@ -477,5 +477,5 @@ func findGPGID(from url: URL) -> String {
     }
     path = path.appendingPathComponent(".gpg-id")
 
-    return (try? String(contentsOf: path))?.trimmed ?? ""
+    return (try? String(contentsOf: path, encoding: .utf8))?.trimmed ?? ""
 }

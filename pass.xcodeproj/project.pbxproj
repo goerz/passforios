@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0A55C0F0000000000000006 /* LabelTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A55C0F0000000000000005 /* LabelTableViewCellTest.swift */; };
+		B0A55C0F0000000000000004 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A55C0F0000000000000003 /* SceneDelegate.swift */; };
 		300713C52219D54100F553AC /* AutoCellHeightUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300713C42219D54100F553AC /* AutoCellHeightUITableViewController.swift */; };
 		3010CB6026DA4F87008964D2 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 3010CB5F26DA4F87008964D2 /* SwiftyUserDefaults */; };
 		3010CB6326DA4FE9008964D2 /* FavIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 3010CB6226DA4FE9008964D2 /* FavIcon */; };
@@ -339,6 +341,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B0A55C0F0000000000000005 /* LabelTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCellTest.swift; sourceTree = "<group>"; };
+		B0A55C0F0000000000000001 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		B0A55C0F0000000000000003 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		300713C42219D54100F553AC /* AutoCellHeightUITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCellHeightUITableViewController.swift; sourceTree = "<group>"; };
 		301F6462216162550071A4CE /* AdditionField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionField.swift; sourceTree = "<group>"; };
 		301F6467216165290071A4CE /* ConstantsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTest.swift; sourceTree = "<group>"; };
@@ -428,17 +433,12 @@
 		30DAFD4B240985E3002456E7 /* Array+SlicesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SlicesTest.swift"; sourceTree = "<group>"; };
 		30EE3A18241E98C1009FBB61 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = en; path = en.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
 		30EE3A1B241E98C6009FBB61 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
-		30F6C1B327664C7200BE5AB2 /* SVProgressHUD.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SVProgressHUD.xcframework; path = Carthage/Build/SVProgressHUD.xcframework; sourceTree = "<group>"; };
 		30FD2F77214D9E0E005E0A92 /* ParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTest.swift; sourceTree = "<group>"; };
 		5F9D7B0C27AF6F7300A8AB22 /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
 		8A4716682F5EF56900C7A64D /* AppKeychainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeychainTest.swift; sourceTree = "<group>"; };
 		8A47166F2F5EF7A900C7A64D /* PersistenceControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTest.swift; sourceTree = "<group>"; };
 		8A4756A22F6374B700131B6D /* PersistenceController+UnitTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistenceController+UnitTestHelpers.swift"; sourceTree = "<group>"; };
 		8AD8EBF22F5E268D007475AB /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = "<group>"; };
-		9A1EF0B324C50DD80074FEAC /* passBeta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = passBeta.entitlements; sourceTree = "<group>"; };
-		9A1EF0B424C50E780074FEAC /* passBetaAutoFillExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = passBetaAutoFillExtension.entitlements; sourceTree = "<group>"; };
-		9A1EF0B524C50EE00074FEAC /* passBetaExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = passBetaExtension.entitlements; sourceTree = "<group>"; };
-		9A1EF0B624C50FEA0074FEAC /* passBetaShortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = passBetaShortcuts.entitlements; sourceTree = "<group>"; };
 		9A2C7D832783FF5200BD9AF3 /* YubiKeyConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YubiKeyConnection.swift; sourceTree = "<group>"; };
 		9A2C7D8A2784139200BD9AF3 /* YubiKeyAPDU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YubiKeyAPDU.swift; sourceTree = "<group>"; };
 		9A55C184259E8C5600FA8FD9 /* PasswordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsViewController.swift; sourceTree = "<group>"; };
@@ -626,6 +626,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0A55C0F0000000000000007 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0A55C0F0000000000000005 /* LabelTableViewCellTest.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B0A55C0F0000000000000002 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B0A55C0F0000000000000001 /* Project.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		3005F35224B13BF3000519B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,7 +693,6 @@
 				30A69947240EED5E00B7D967 /* IntentHandler.swift */,
 				30A69968240EF52E00B7D967 /* SyncRepositoryIntentHandler.swift */,
 				304E212C241AD0EB0047FB51 /* passShortcuts.entitlements */,
-				9A1EF0B624C50FEA0074FEAC /* passBetaShortcuts.entitlements */,
 				30A69949240EED5E00B7D967 /* Info.plist */,
 			);
 			path = passShortcuts;
@@ -829,7 +844,6 @@
 			isa = PBXGroup;
 			children = (
 				5F9D7B0C27AF6F7300A8AB22 /* CryptoTokenKit.framework */,
-				30F6C1B327664C7200BE5AB2 /* SVProgressHUD.xcframework */,
 				9ADAB21C26DDA52400900F10 /* Gopenpgp.xcframework */,
 			);
 			name = Frameworks;
@@ -869,7 +883,6 @@
 				9A8F9EBB259EA4A80027CE15 /* Services */,
 				A239F5A921591E3700576CBF /* Controllers */,
 				A239F59E2158C08C00576CBF /* passAutoFillExtension.entitlements */,
-				9A1EF0B424C50E780074FEAC /* passBetaAutoFillExtension.entitlements */,
 				A239F59A2158C08C00576CBF /* MainInterface.storyboard */,
 				9A5865EF25AA944B006719C2 /* SearchPassword.storyboard */,
 				A239F59D2158C08C00576CBF /* Info.plist */,
@@ -935,7 +948,6 @@
 				A2367B9F1EF0387000C8FE8B /* Assets.xcassets */,
 				A26700351EEC475600176B8A /* passProcessor.js */,
 				A26700331EEC46C900176B8A /* passExtension.entitlements */,
-				9A1EF0B524C50EE00074FEAC /* passBetaExtension.entitlements */,
 				A26700281EEC466A00176B8A /* MainInterface.storyboard */,
 				A267002B1EEC466A00176B8A /* Info.plist */,
 			);
@@ -994,6 +1006,7 @@
 			isa = PBXGroup;
 			children = (
 				308800CD24F04E6600E87ED3 /* Models */,
+				B0A55C0F0000000000000007 /* Views */,
 				DC13B1521E8640810097803F /* Info.plist */,
 			);
 			path = passTests;
@@ -1083,6 +1096,7 @@
 		DC917BCA1E2E8231000FDF54 = {
 			isa = PBXGroup;
 			children = (
+				B0A55C0F0000000000000002 /* Config */,
 				DC917BD51E2E8231000FDF54 /* pass */,
 				A239F5972158C08C00576CBF /* passAutoFillExtension */,
 				A26700251EEC466A00176B8A /* passExtension */,
@@ -1119,8 +1133,8 @@
 				DC19400F1E4B3A9E0077E0A3 /* Views */,
 				DC917BDD1E2E8231000FDF54 /* Assets.xcassets */,
 				DC917BD61E2E8231000FDF54 /* AppDelegate.swift */,
+				B0A55C0F0000000000000003 /* SceneDelegate.swift */,
 				A26700321EEC46C400176B8A /* pass.entitlements */,
-				9A1EF0B324C50DD80074FEAC /* passBeta.entitlements */,
 				DC917BDF1E2E8231000FDF54 /* LaunchScreen.storyboard */,
 				DC917BDA1E2E8231000FDF54 /* Main.storyboard */,
 				30C25DBF21F3599E00BB27BB /* InfoPlist.strings */,
@@ -1330,14 +1344,12 @@
 				TargetAttributes = {
 					30A69944240EED5E00B7D967 = {
 						CreatedOnToolsVersion = 11.3;
-						DevelopmentTeam = 4WDM8E95VU;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					A239F5942158C08B00576CBF = {
 						CreatedOnToolsVersion = 10.0;
-						DevelopmentTeam = 4WDM8E95VU;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1350,7 +1362,7 @@
 					A26075771EEC6F34005DB03E = {
 						CreatedOnToolsVersion = 8.3.3;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					A260757F1EEC6F34005DB03E = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -1360,9 +1372,8 @@
 					};
 					A26700231EEC466A00176B8A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4WDM8E95VU;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1374,16 +1385,14 @@
 					};
 					DC13B14D1E8640810097803F = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 4WDM8E95VU;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DC917BD21E2E8231000FDF54;
 					};
 					DC917BD21E2E8231000FDF54 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4WDM8E95VU;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -1721,6 +1730,7 @@
 			files = (
 				308800D124F0596300E87ED3 /* QRKeyScannerTest.swift in Sources */,
 				308800CF24F04E9900E87ED3 /* ScannableKeyTypeTest.swift in Sources */,
+				B0A55C0F0000000000000006 /* LabelTableViewCellTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1777,6 +1787,7 @@
 				DC037CB81E4DD1A500609409 /* AddPasswordTableViewController.swift in Sources */,
 				DCC441521E8F6C06008A90C4 /* RawPasswordViewController.swift in Sources */,
 				DC917BD71E2E8231000FDF54 /* AppDelegate.swift in Sources */,
+				B0A55C0F0000000000000004 /* SceneDelegate.swift in Sources */,
 				DC037CBB1E4DD47B00609409 /* TextFieldTableViewCell.swift in Sources */,
 				DCFB77A91E502FF6008DE471 /* PasswordEditorTableViewController.swift in Sources */,
 			);
@@ -1929,17 +1940,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passShortcuts/PassShortcuts.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passShortcuts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1948,9 +1953,8 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.mssun.passforios.shortcuts;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).shortcuts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development me.mssun.passforios.shortcuts";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1965,17 +1969,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passShortcuts/PassShortcuts.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passShortcuts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1983,9 +1981,8 @@
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.mssun.passforios.shortcuts;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).shortcuts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforios.shortcuts";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1994,6 +1991,7 @@
 		};
 		9A1EF0AB24C4EB280074FEAC /* Beta */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A55C0F0000000000000001 /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -2024,12 +2022,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
-				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2043,18 +2039,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MARKETING_VERSION = 0.19.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-D BETA";
-				PRODUCT_BUNDLE_IDENTIFIER = me.mssun.passforiosbeta;
 				PRODUCT_NAME = "Pass Beta";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "-Wno-incomplete-umbrella";
@@ -2065,17 +2058,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBeta;
-				CODE_SIGN_ENTITLEMENTS = pass/passBeta.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = pass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2085,9 +2072,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "${inherited}";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PROVISIONING_PROFILE = "ee6e841d-ef77-4f00-b534-d7f1fd25dc1d";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforiosbeta";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "pass/Helpers/Objective-CBridgingHeader.h";
 				SWIFT_VERSION = 5.0;
@@ -2101,11 +2086,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2113,7 +2096,7 @@
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2125,19 +2108,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				APP_DISPLAY_NAME = "Pass Beta";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passExtension/passBetaExtension.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2147,10 +2124,8 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).find-login-action-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).find-login-action-extension";
 				PRODUCT_NAME = passExtension;
-				PROVISIONING_PROFILE = "cbd86628-6f3e-40f3-b518-20d2330db545";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforiosbeta.find-login-action-extension";
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2171,12 +2146,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
@@ -2184,7 +2157,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2205,7 +2178,6 @@
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2213,7 +2185,7 @@
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passKitTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2229,17 +2201,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passAutoFillExtension/passBetaAutoFillExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passAutoFillExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2248,9 +2214,8 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.mssun.passforiosbeta.auto-fill-credential-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).auto-fill-credential-extension";
 				PRODUCT_NAME = passAutoFillExtension;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforiosbeta.auto-fill-credential-extension";
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2266,17 +2231,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passShortcuts/passBetaShortcuts.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passShortcuts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2285,9 +2244,8 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = me.mssun.passforiosbeta.shortcuts;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).shortcuts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforiosbeta.shortcuts";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2302,17 +2260,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passAutoFillExtension/passAutoFillExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passAutoFillExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2321,9 +2273,8 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.mssun.passforios.auto-fill-credential-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).auto-fill-credential-extension";
 				PRODUCT_NAME = passAutoFillExtension;
-				PROVISIONING_PROFILE_SPECIFIER = "match Development me.mssun.passforios.auto-fill-credential-extension";
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2339,17 +2290,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passAutoFillExtension/passAutoFillExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passAutoFillExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2357,9 +2302,8 @@
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.mssun.passforios.auto-fill-credential-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).auto-fill-credential-extension";
 				PRODUCT_NAME = passAutoFillExtension;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforios.auto-fill-credential-extension";
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2380,19 +2324,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MODULEMAP_FILE = "";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2418,19 +2360,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				MODULEMAP_FILE = "";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2451,14 +2391,13 @@
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passKitTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2475,14 +2414,13 @@
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passKitTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2494,19 +2432,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				APP_DISPLAY_NAME = Pass;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passExtension/passExtension.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2515,10 +2447,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				OTHER_CFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).find-login-action-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).find-login-action-extension";
 				PRODUCT_NAME = passExtension;
-				PROVISIONING_PROFILE = "d25c9029-bca6-4b2d-b04e-4abc9d232740";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development me.mssun.passforios.find-login-action-extension";
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2530,19 +2460,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				APP_DISPLAY_NAME = Pass;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = passExtension/passExtension.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2551,10 +2475,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				OTHER_CFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).find-login-action-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).find-login-action-extension";
 				PRODUCT_NAME = passExtension;
-				PROVISIONING_PROFILE = "cbd86628-6f3e-40f3-b518-20d2330db545";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforios.find-login-action-extension";
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2568,18 +2490,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2593,18 +2513,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = passTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER).passTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID).passTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
@@ -2614,6 +2532,7 @@
 		};
 		DC917BE31E2E8231000FDF54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A55C0F0000000000000001 /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -2644,12 +2563,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
-				ENABLE_BITCODE = NO;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2669,18 +2586,16 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MARKETING_VERSION = 0.19.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.mssun.passforios;
 				PRODUCT_NAME = Pass;
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "-Wno-incomplete-umbrella";
 			};
@@ -2688,6 +2603,7 @@
 		};
 		DC917BE41E2E8231000FDF54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A55C0F0000000000000001 /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -2718,12 +2634,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
-				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2737,17 +2651,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				MARKETING_VERSION = 0.19.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = me.mssun.passforios;
 				PRODUCT_NAME = Pass;
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "-Wno-incomplete-umbrella";
@@ -2758,17 +2670,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = pass/pass.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = pass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2777,9 +2683,7 @@
 				MARKETING_VERSION = "$(MARKETING_VERSION)";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "${inherited}";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PROVISIONING_PROFILE = "3c4f599a-ce77-4184-b4c4-edebf09cba3b";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development me.mssun.passforios";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "pass/Helpers/Objective-CBridgingHeader.h";
 				SWIFT_VERSION = 5.0;
@@ -2791,17 +2695,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = pass/pass.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 4WDM8E95VU;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = pass/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2811,9 +2709,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "${inherited}";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PROVISIONING_PROFILE = "ee6e841d-ef77-4f00-b534-d7f1fd25dc1d";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.mssun.passforios";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PASS_APP_ID)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "pass/Helpers/Objective-CBridgingHeader.h";
 				SWIFT_VERSION = 5.0;

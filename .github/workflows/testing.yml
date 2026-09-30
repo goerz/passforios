@@ -4,6 +4,9 @@ on: [push, pull_request]
 
 jobs:
   testing:
+    # Upstream's runner (Xcode 16) cannot build the fork's iOS 26 target; the fork tests
+    # locally with `make test`.
+    if: github.repository == 'mssun/passforios'
     runs-on: macos-15
     steps:
     - uses: actions/checkout@v4

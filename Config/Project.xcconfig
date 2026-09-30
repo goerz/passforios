@@ -1,0 +1,46 @@
+// Project-wide settings shared by the Xcode GUI and the Makefile.
+//
+// Personal values (team, bundle identifier, app name, paid account) belong in the
+// git-ignored local.mk; `make` writes them into Local.xcconfig, which overrides the
+// defaults below. Settings in the project file win over this file, so the targets must
+// not set the ones defined here.
+
+// The bundle identifier of the app. The extensions' identifiers and the App Group derive
+// from it. Upstream's App Store app is me.mssun.passforios, which only upstream's team
+// can sign.
+PASS_BUNDLE_ID = com.example.passforios
+// The app's name on the Home Screen, in Settings > General > AutoFill & Passwords, and in
+// the share sheet (APP_NAME in local.mk).
+PASS_APP_NAME = Pass
+DEVELOPMENT_TEAM =
+CODE_SIGN_STYLE = Automatic
+
+// The Beta configuration (upstream's TestFlight channel) is a separate app next to the
+// release, as upstream's me.mssun.passforiosbeta is.
+PASS_BUNDLE_SUFFIX_Debug =
+PASS_BUNDLE_SUFFIX_Release =
+PASS_BUNDLE_SUFFIX_Beta = beta
+PASS_APP_ID = $(PASS_BUNDLE_ID)$(PASS_BUNDLE_SUFFIX_$(CONFIGURATION))
+PRODUCT_BUNDLE_IDENTIFIER = $(PASS_APP_ID)
+PASS_DISPLAY_NAME_Debug = $(PASS_APP_NAME)
+PASS_DISPLAY_NAME_Release = $(PASS_APP_NAME)
+PASS_DISPLAY_NAME_Beta = $(PASS_APP_NAME) Beta
+PASS_DISPLAY_NAME = $(PASS_DISPLAY_NAME_$(CONFIGURATION))
+
+// Capabilities that need a paid Apple Developer Program membership: the App Group the app
+// shares with its extensions (and the keychain group that comes with it), AutoFill, Siri
+// Shortcuts, and NFC for the YubiKey (PAID_ACCOUNT in local.mk). With NO, the app is built
+// without entitlements and keeps its data in its own container; the extensions are
+// installed but see none of it. Code checks at runtime (Globals reads the PassAppGroup
+// Info.plist key, which is empty with NO), so both configurations compile.
+PASS_PAID_ACCOUNT = NO
+PASS_APP_GROUP_YES = group.$(PASS_APP_ID)
+PASS_APP_GROUP_NO =
+PASS_APP_GROUP = $(PASS_APP_GROUP_$(PASS_PAID_ACCOUNT))
+PASS_ENTITLEMENTS_pass_YES = pass/pass.entitlements
+PASS_ENTITLEMENTS_passExtension_YES = passExtension/passExtension.entitlements
+PASS_ENTITLEMENTS_passAutoFillExtension_YES = passAutoFillExtension/passAutoFillExtension.entitlements
+PASS_ENTITLEMENTS_passShortcuts_YES = passShortcuts/passShortcuts.entitlements
+CODE_SIGN_ENTITLEMENTS = $(PASS_ENTITLEMENTS_$(TARGET_NAME)_$(PASS_PAID_ACCOUNT))
+
+#include? "Local.xcconfig"

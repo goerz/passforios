@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import MobileCoreServices
 import passKit
+import UIKit
+import UniformTypeIdentifiers
 
 class ExtensionViewController: UIViewController {
     private lazy var passcodelock: PasscodeExtensionDisplay = { [unowned self] in
@@ -122,11 +123,11 @@ extension NSItemProvider {
     }
 
     var hasURL: Bool {
-        hasItemConformingToTypeIdentifier(kUTTypeURL as String) && registeredTypeIdentifiers.count == 1
+        hasItemConformingToTypeIdentifier(UTType.url.identifier) && registeredTypeIdentifiers.count == 1
     }
 
     var hasPropertyList: Bool {
-        hasItemConformingToTypeIdentifier(kUTTypePropertyList as String)
+        hasItemConformingToTypeIdentifier(UTType.propertyList.identifier)
     }
 }
 
@@ -143,7 +144,7 @@ extension NSExtensionContext {
 extension NSItemProvider {
     /// Extracts the URL from the item provider
     func extractSearchText(completion: @escaping (String?) -> Void) {
-        loadItem(forTypeIdentifier: kUTTypeURL as String) { item, _ in
+        loadItem(forTypeIdentifier: UTType.url.identifier) { item, _ in
             if let url = item as? NSURL {
                 completion(url.host)
             } else {
@@ -151,7 +152,7 @@ extension NSItemProvider {
             }
         }
 
-        loadItem(forTypeIdentifier: kUTTypePropertyList as String) { item, _ in
+        loadItem(forTypeIdentifier: UTType.propertyList.identifier) { item, _ in
             if let dict = item as? NSDictionary {
                 if let result = dict[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary {
                     completion(result.extractSearchText())

@@ -1,0 +1,163 @@
+#!/bin/bash
+# Refuses commits and pushes that contain personal information. This repository is public,
+# so nothing personal may be committed, not even as an example or in documentation.
+#
+# Private are: every value in local.mk (except APP_NAME and PAID_ACCOUNT), every line of
+# the git-ignored .private-strings, this machine's home directory, host name, and git email,
+# anything shaped like a credential or a device UDID, and files that hold keys, profiles, or
+# personal settings. The values are read at run time and never printed, so neither this
+# script nor its output contains them.
+#
+# Usage:
+#   check-private staged         the staged changes (pre-commit)
+#   check-private message FILE   a commit message (commit-msg)
+#   check-private push           the commits on stdin's refs that no remote has yet (pre-push)
+#   check-private tree           every tracked file (`make check-private`)
+#
+# `make` installs the hooks in .githooks (git config core.hooksPath .githooks).
+
+set -u
+export LC_ALL=C
+cd "$(git rev-parse --show-toplevel)" || exit 2
+
+TMP=$(mktemp -d)
+trap 'rm -rf "$TMP"' EXIT
+FOUND=0
+TAB=$(printf '\t')
+
+# "label<TAB>value" lines for the literal strings.
+{
+    if [ -f local.mk ]; then
+        awk '/^[[:space:]]*[A-Za-z_][A-Za-z0-9_-]*[[:space:]]*[:?+]?=/ {
+            name = $0; sub(/^[[:space:]]*/, "", name); sub(/[[:space:]]*[:?+]?=.*/, "", name)
+            value = $0; sub(/^[^=]*=/, "", value); sub(/#.*/, "", value)
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", value)
+            if (name != "APP_NAME" && name != "PAID_ACCOUNT") printf "the value of %s in local.mk\t%s\n", name, value
+        }' local.mk
+    fi
+    if [ -f .private-strings ]; then
+        awk '!/^[[:space:]]*(#|$)/ { printf "line %d of .private-strings\t%s\n", NR, $0 }' .private-strings
+    fi
+    printf 'the home directory\t%s\n' "$HOME"
+    email=$(git config user.email)
+    [ -n "$email" ] && printf 'the git user.email\t%s\n' "$email"
+    host=$(scutil --get LocalHostName 2>/dev/null || hostname -s)
+    [ -n "$host" ] && printf 'the host name\t%s\n' "$host"
+} | awk -F '\t' 'length($2) >= 4' > "$TMP/literals"
+
+# "label<TAB>extended regex" lines for credential-shaped text.
+cat > "$TMP/patterns" <<'EOF'
+a private key	-----BEGIN ([A-Z0-9]+ )*PRIVATE KEY( BLOCK)?-----
+a URL with a password	[A-Za-z][A-Za-z0-9+.-]*://[^/[:space:]:@]+:[^/[:space:]@]+@
+an Apple device UDID	[0-9A-Fa-f]{8}-[0-9A-Fa-f]{16}
+an AWS access key	AKIA[0-9A-Z]{16}
+a GitHub token	(gh[pousr]_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{22,})
+an Anthropic or OpenAI API key	sk-(ant-)?[A-Za-z0-9_-]{32,}
+a Slack token	xox[abprs]-[A-Za-z0-9-]{10,}
+a Google API key	AIza[0-9A-Za-z_-]{35}
+EOF
+
+report() {  # where, what
+    echo "  $1: contains $2" >&2
+    FOUND=1
+}
+
+# Checks the text in a file. Arguments: where it comes from, the file.
+check_text() {
+    local label value
+    while IFS="$TAB" read -r label value; do
+        grep -qF -- "$value" "$2" && report "$1" "$label"
+    done < "$TMP/literals"
+    # The placeholder UDID in examples is not a device's.
+    sed 's/00000000-0000000000000000//g' "$2" > "$TMP/unplaceheld"
+    while IFS="$TAB" read -r label value; do
+        grep -qE -- "$value" "$TMP/unplaceheld" && report "$1" "$label"
+    done < "$TMP/patterns"
+}
+
+# Checks a file name: personal settings, keys, and provisioning profiles.
+check_path() {
+    case "${1##*/}" in
+        local.mk | Local.xcconfig | CLAUDE.local.md | .private-strings | settings.local.json | .env | .env.*) ;;
+        *.p12 | *.p8 | *.pem | *.key | *.cer | *.mobileprovision | *.provisionprofile | *.keychain | *.keychain-db) ;;
+        id_rsa* | id_dsa* | id_ecdsa* | id_ed25519* | gpg_key* | ssh_key* | *.gpg | *.asc) ;;
+        *) return ;;
+    esac
+    report "$1" "a file that must not be committed"
+}
+
+# The added lines of one file in a diff. Arguments: git diff arguments.
+added_lines() {
+    git diff --no-color --no-ext-diff --text -U0 "$@" > "$TMP/diff" || return 2
+    grep '^+' "$TMP/diff" | grep -v '^+++ ' | cut -c2-
+    return 0
+}
+
+case "${1:-}" in
+staged)
+    # In a merge, only what differs from the merged branch (upstream's own content is not ours).
+    base=HEAD
+    git rev-parse -q --verify MERGE_HEAD > /dev/null && base=MERGE_HEAD
+    git rev-parse -q --verify "$base" > /dev/null || base=$(git hash-object -t tree /dev/null)
+    # Any failure refuses the commit: a check that cannot run must not pass.
+    git diff --cached --name-only -z --diff-filter=ACMR "$base" > "$TMP/paths" || exit 2
+    while IFS= read -r -d '' path; do
+        check_path "$path"
+        added_lines --cached "$base" -- "$path" > "$TMP/text" || exit 2
+        check_text "$path" "$TMP/text"
+    done < "$TMP/paths"
+    ;;
+message)
+    grep -v '^#' "$2" > "$TMP/text"
+    check_text "the commit message" "$TMP/text"
+    ;;
+push)
+    # Commits that no remote-tracking branch has: upstream's commits and the ones pushed
+    # before were checked already or are not ours.
+    : > "$TMP/commits"
+    while read -r _ local_sha _ _; do
+        [ "$local_sha" = 0000000000000000000000000000000000000000 ] && continue
+        git rev-list "$local_sha" --not --remotes >> "$TMP/commits" || exit 2
+    done
+    sort -u "$TMP/commits" > "$TMP/unique"
+    while read -r commit; do
+        short=$(git rev-parse --short "$commit") || exit 2
+        git log -1 --format=%B "$commit" > "$TMP/text" || exit 2
+        check_text "the message of $short" "$TMP/text"
+        # A root commit against the empty tree. A merge (of upstream) only with the lines that
+        # are new against every parent: the merged branch's own content is not the merge's.
+        parents=$(git rev-list --parents -n 1 "$commit" | cut -d' ' -f2-)
+        [ "$parents" != "$commit" ] && [ -n "$parents" ] || parents=$(git hash-object -t tree /dev/null)
+        first=${parents%% *}
+        git diff --name-only -z --diff-filter=ACMR "$first" "$commit" > "$TMP/paths" || exit 2
+        while IFS= read -r -d '' path; do
+            check_path "$short:$path"
+            added_lines "$first" "$commit" -- "$path" > "$TMP/text" || exit 2
+            for parent in ${parents#"$first"}; do
+                added_lines "$parent" "$commit" -- "$path" > "$TMP/other" || exit 2
+                grep -Fxf "$TMP/other" "$TMP/text" > "$TMP/both"
+                mv "$TMP/both" "$TMP/text"
+            done
+            check_text "$short:$path" "$TMP/text"
+        done < "$TMP/paths"
+    done < "$TMP/unique"
+    ;;
+tree)
+    # Literal values only: upstream's test fixtures contain credential-shaped test data.
+    git ls-files -z > "$TMP/paths" || exit 2
+    while IFS= read -r -d '' path; do check_path "$path"; done < "$TMP/paths"
+    while IFS="$TAB" read -r label value; do
+        git grep -lzF -e "$value" > "$TMP/hits"
+        while IFS= read -r -d '' path; do report "$path" "$label"; done < "$TMP/hits"
+    done < "$TMP/literals"
+    ;;
+*)
+    echo "usage: $0 staged | message FILE | push | tree" >&2
+    exit 2
+    ;;
+esac
+
+if [ "$FOUND" != 0 ]; then
+    echo "ERROR: personal information; nothing was committed or pushed (see CLAUDE.md, \"Personal information\")." >&2
+    exit 1
+fi

@@ -19,7 +19,7 @@ open class PasscodeLockPresenter {
     }
 
     open func present(windowLevel: CGFloat?) {
-        guard PasscodeLock.shared.hasPasscode else {
+        guard PasscodeLock.shared.hasPasscode, let windowScene = mainWindow?.windowScene else {
             return
         }
 
@@ -28,7 +28,7 @@ open class PasscodeLockPresenter {
 
         // new window
         mainWindow?.endEditing(true)
-        passcodeLockWindow = UIWindow(frame: mainWindow!.frame)
+        passcodeLockWindow = UIWindow(windowScene: windowScene)
         moveWindowsToFront(windowLevel: windowLevel)
         passcodeLockWindow?.isHidden = false
 

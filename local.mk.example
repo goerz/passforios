@@ -1,0 +1,22 @@
+# Copy to local.mk (git-ignored) and fill in.
+
+# Your development team ID (Xcode > Settings > Accounts, or the Membership page of your
+# developer account). Without it, only simulator builds work.
+TEAM = XXXXXXXXXX
+# A bundle identifier of your own. It cannot be the App Store app's (me.mssun.passforios),
+# which only upstream's team can sign; your build installs next to the App Store app.
+BUNDLE_ID = com.example.passforios
+# Optional: the app's name on the Home Screen, in the AutoFill settings, and in the share
+# sheet. The default is "Pass", the App Store app's name; another name tells the two apart.
+# APP_NAME = Pass Dev
+
+# App Groups (sharing the passwords with the AutoFill and share extensions), AutoFill,
+# Siri Shortcuts, and NFC (YubiKey) need a paid Apple Developer Program membership. Leave
+# at 0 for a free team: the app then works on its own, without the extensions.
+PAID_ACCOUNT = 0
+
+# Your devices: a name of your choosing (letters, digits, hyphens) for each UDID, as
+# DEVICE_<name> = <UDID>. `make devices` lists the UDIDs; `make device D=<name>` installs
+# on one. The names iphone and ipad also work as `make iphone` and `make ipad`.
+# DEVICE_iphone = 00000000-0000000000000000
+# DEVICE_ipad = 00000000-0000000000000000

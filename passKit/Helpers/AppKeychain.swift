@@ -11,7 +11,8 @@ import KeychainAccess
 public class AppKeychain: KeyStore {
     public static let shared = AppKeychain()
 
-    private let keychain = Keychain(service: Globals.bundleIdentifier, accessGroup: Globals.groupIdentifier)
+    // Without an App Group, the app's default keychain group.
+    private let keychain = (Globals.groupIdentifier.map { Keychain(service: Globals.bundleIdentifier, accessGroup: $0) } ?? Keychain(service: Globals.bundleIdentifier))
         .accessibility(.whenUnlockedThisDeviceOnly)
         .synchronizable(false)
 

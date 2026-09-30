@@ -21,7 +21,8 @@ public extension DefaultsSerializable where Self: RawRepresentable {
     typealias ArrayBridge = DefaultsRawRepresentableArrayBridge<[Self]>
 }
 
-public var Defaults = DefaultsAdapter(defaults: UserDefaults(suiteName: Globals.groupIdentifier)!, keyStore: DefaultsKeys())
+// Shared with the extensions through the App Group; without one, the app's own defaults.
+public var Defaults = DefaultsAdapter(defaults: Globals.groupIdentifier.flatMap { UserDefaults(suiteName: $0) } ?? .standard, keyStore: DefaultsKeys())
 
 public enum KeySource: String, DefaultsSerializable {
     case url, armor, file, itunes

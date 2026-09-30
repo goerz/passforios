@@ -345,21 +345,12 @@ class PasswordDetailTableViewController: UITableViewController, UIGestureRecogni
 
     @objc
     private func tapMenu(recognizer: UITapGestureRecognizer) {
-        if recognizer.state == UIGestureRecognizer.State.ended {
-            let tapLocation = recognizer.location(in: tableView)
-            if let tapIndexPath = tableView.indexPathForRow(at: tapLocation) {
-                if let tappedCell = tableView.cellForRow(at: tapIndexPath) as? LabelTableViewCell {
-                    tappedCell.becomeFirstResponder()
-                    let menuController = UIMenuController.shared
-                    let revealItem = UIMenuItem(title: "Reveal".localize(), action: #selector(LabelTableViewCell.revealPassword))
-                    let concealItem = UIMenuItem(title: "Conceal".localize(), action: #selector(LabelTableViewCell.concealPassword))
-                    let nextHOTPItem = UIMenuItem(title: "NextPassword".localize(), action: #selector(LabelTableViewCell.getNextHOTP))
-                    let openURLItem = UIMenuItem(title: "CopyAndOpen".localize(), action: #selector(LabelTableViewCell.openLink))
-                    menuController.menuItems = [revealItem, concealItem, nextHOTPItem, openURLItem]
-                    menuController.showMenu(from: tappedCell.contentLabel.superview!, rect: tappedCell.contentLabel.frame)
-                }
-            }
+        guard recognizer.state == .ended,
+              let tapIndexPath = tableView.indexPathForRow(at: recognizer.location(in: tableView)),
+              let tappedCell = tableView.cellForRow(at: tapIndexPath) as? LabelTableViewCell else {
+            return
         }
+        tappedCell.showMenu()
     }
 
     func gestureRecognizer(_: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {

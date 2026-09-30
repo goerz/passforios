@@ -155,9 +155,7 @@ class PasswordNavigationViewController: UIViewController {
         guard let tabBarItem = navigationController?.tabBarItem else {
             return
         }
-        if #available(iOS 15.0, *) {
-            tabBarItem.scrollEdgeAppearance = tabBarItem.standardAppearance
-        }
+        tabBarItem.scrollEdgeAppearance = tabBarItem.standardAppearance
 
         let numberOfLocalCommits = PasswordStore.shared.numberOfLocalCommits
         if numberOfLocalCommits != 0 {

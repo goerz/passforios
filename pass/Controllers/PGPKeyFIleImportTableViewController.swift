@@ -7,6 +7,7 @@
 //
 
 import passKit
+import UniformTypeIdentifiers
 
 class PGPKeyFileImportTableViewController: AutoCellHeightUITableViewController, AlertPresenting {
     @IBOutlet var pgpPublicKeyFile: UITableViewCell!
@@ -26,7 +27,7 @@ class PGPKeyFileImportTableViewController: AutoCellHeightUITableViewController, 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        let picker = UIDocumentPickerViewController(documentTypes: ["public.item"], in: .open)
+        let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.item])
         cell?.isSelected = false
         if cell == pgpPublicKeyFile {
             currentlyPicking = .public

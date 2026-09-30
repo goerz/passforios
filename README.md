@@ -47,10 +47,13 @@ For more, please read the [wiki page](https://github.com/mssun/passforios/wiki).
 
 ## Building Pass for iOS
 
+This fork builds with `make` and Xcode 27 (iOS 26 or later).
+
 1. Install Go: `brew install go`.
-1. Run `./scripts/gopenpgp_build.sh` to build GopenPGP.
-1. Open the `pass.xcodeproj` file in Xcode.
-1. Build & Run.
+1. Copy `local.mk.example` to `local.mk` and fill in your team ID, a bundle identifier of your own, and your devices. Set `PAID_ACCOUNT = 1` if you have a paid Apple Developer Program membership; without it, the app works on its own, but AutoFill, the share extension, Siri Shortcuts, and YubiKey over NFC are left out.
+1. Run `make test` for the unit tests and `make sim` to run the app in the simulator. `make device D=<name>` installs it on a device, and on an Apple silicon Mac, `make mac` runs it there as an iPad app. `make help` lists everything else.
+
+Your build has its own bundle identifier, so it installs next to the App Store app instead of replacing it, and it cannot see the App Store app's data. To use it, import your keys and clone your password store again. `make` also installs git hooks that refuse commits containing personal information (see `CLAUDE.md`).
 
 ## License
 
